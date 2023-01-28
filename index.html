@@ -413,12 +413,21 @@
             await navigator.clipboard.writeText(text);
 
             // visual feedback that task is completed
-            $(".code-copy").data('bs.tooltip').options.title = "Copied!"
+            $(button).attr('title', "Copied!");
+            $(button).attr('data-bs-original-title', "Copied!");
+            $(button).attr('data-original-title', "Copied!");
+            $(button).tooltip("update");
+            $(button).tooltip("show");
             button.innerHTML = "<i class='fa-regular fa-check'></i>";
 
             setTimeout(() => {
                 button.innerHTML = copyButtonLabel;
-            }, 1000);
+                $(button).attr('title', "Copy to clipboard");
+                $(button).attr('data-bs-original-title', "Copy to clipboard");
+                $(button).attr('data-original-title', "Copy to clipboard");
+                $(button).tooltip("update");
+                $(button).tooltip("show");
+            }, 1500);
             }
             getOS();
             $(function () {
