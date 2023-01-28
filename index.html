@@ -259,6 +259,10 @@
                 padding: 1.5vh 1.7vh!important;
                 width: auto;
               }
+              .mobile,
+              .not-supported {
+                display: none;
+              }
         </style>
     </head>
     <body>
@@ -317,6 +321,8 @@
                 <div class="main-top">
                     <h1 class="text-center mb-3 fw-semibold" style="font-size: calc(1.525rem + 3.3vw); line-height: 1.3;">Make anything in your imagination, using Rosemary</h1>
                     <p class="text-center lead mb-4">GoneRogue's in-house programming language.</p>
+                    <b class="not-supported">Your device is not supported. We support Linux, Windows and macOS.</b>
+                    <b class="mobile">You are on mobile. Rosemary does not work on mobile.</b>
                     <pre class="windows"><i class="fa-brands fa-windows"></i> C:\Windows\System32><code>cURL -cS https://github.com/TheRosemaryProject/Rosemary/blob/main/install.bat</code></pre>
                     <pre class="unix"><i class="fa-brands fa-apple"></i><i class="fa-brands fa-linux"></i> $<code>cURL -cS https://github.com/TheRosemaryProject/Rosemary/blob/main/install.sh</code></pre>
                 </div>
@@ -375,13 +381,18 @@
                     $(".windows").css("display","none");
                 } else if (iosPlatforms.indexOf(platform) !== -1) {
                     os = 2; // iOS
+                    $(".mobile").css("display","initial");
                 } else if (windowsPlatforms.indexOf(platform) !== -1) {
                     os = 3; // Windows
                     $(".unix").css("display","none");
                 } else if (/Android/.test(userAgent)) {
                     os = 4; // Android
+                    $(".mobile").css("display","initial");
                 } else if (/Linux/.test(platform)) {
                     os = 5; // UNIX/Linux
+                }
+                else {
+                    $(".not-supported").css("display","initial");
                 }
 
             }
