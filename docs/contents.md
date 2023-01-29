@@ -4,8 +4,8 @@
 ##### Windows
 - [Windows Install](NTinstall.md)
 ##### *nix Based
-- [MacOS X Install](placeholder) 
-- [Linux Debian Install](placeholder) 
+<!-- - [MacOS X Install](placeholder)
+- [Linux Debian Install](placeholder) -->
 - [General Unix Executable](*NIXinstall.md) 
 #### Part 2 - Usage
 ##### Hello World
