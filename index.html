@@ -139,8 +139,9 @@
                 top: 0;
                 left: 0;
                 right: 0;
-                bottom: 0;
+                height: auto;
                 background-image: linear-gradient(135deg, rgb(139, 198, 236) 0%, rgb(149, 153, 226) 100%);
+                padding-bottom: 0;
               }
 
               .main-top {
@@ -200,6 +201,7 @@
               @media (max-width: 579px) {
                 .main {
                     padding-left: 25px;
+                    padding-top: 150px;
                 }
                 .sidenav {
                     display: none;
@@ -209,6 +211,11 @@
                 }
                 a.nav-button:active {
                     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.2);
+                }
+              }
+              @media (max-width: 720px) {
+                .win-code-prefix {
+                    display: none;
                 }
               }
 
@@ -302,20 +309,22 @@
               .icon-link {
                 display: flex;
                 align-items: center;
-                -webkit-text-decoration-color: rgba(13,110,253,0.5);
-                text-decoration-color: rgba(13,110,253,0.5);
-                text-underline-offset: 0.5rem;
                 -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
                 color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
                 transition: 0.2s;
                 color: rgb(13,110,253);
-                text-decoration-color: rgba(13,110,253,0.5);
+                text-decoration: none;
                 font-size: 20px;
                 padding-left: 0!important;
                 gap: 5px;
+                text-decoration-color: rgba(13,110,253,0.5);
+                text-decoration-color: rgba(13,110,253,0.5);
+                text-underline-offset: 0.5rem;
+                -webkit-text-decoration-color: rgba(13,110,253,0.5);
               }
               .icon-link:hover {
+                text-decoration: underline;
                 color: rgb(10,88,202);
                 gap: 10px;
               }
@@ -340,7 +349,45 @@
 
               .rsmy-footer {
                 background: white;
+                color: silver;
+                padding: 1rem;
+                border-radius: 25px 25px 0 0;
               }
+              .footer-row > * {
+                width: auto;
+              }
+              .footer-row .col-sm p {
+                margin: 0;
+              }
+              .footer-row .col-sm p a {
+                color: black;
+              }
+
+              .android,
+              .ios {
+                display: none;
+              }
+
+              .progress-catalog {
+                width:100%;
+                display:grid;
+                grid-template-columns: auto auto auto;
+                gap: 20px;
+              }
+              .progress-item {
+                padding: 1rem;
+                border-radius: 25px;
+                text-align: left;
+              }
+              .progress-box h3 {
+                padding-left:1em;
+              }
+              @media (max-width: 1050px) {
+                .progress-catalog {
+                    grid-template-columns: auto;
+                }
+              }
+
         </style>
     </head>
     <body>
@@ -400,9 +447,92 @@
                     <h1 class="text-center mb-3 fw-semibold" style="font-size: calc(1.525rem + 3.3vw); line-height: 1.3;">Make anything in your imagination, using Rosemary</h1>
                     <p class="text-center lead mb-4">GoneRogue's in-house programming language.</p>
                     <b class="not-supported">Your device is not supported. We support Linux, Windows and macOS.</b>
-                    <b class="mobile">You are on mobile. Rosemary does not work on mobile.</b>
-                    <pre class="windows"><i class="fa-brands fa-windows"></i> C:\Windows\System32><code>cURL -cS https://github.com/TheRosemaryProject/Rosemary/blob/main/install.bat</code></pre>
+                    <b class="android">You are on Android. Rosemary does not work on Android.</b>
+                    <b class="ios">You are on iOS. Try installing <a href="https://apps.apple.com/us/app/ish-shell/id1436902243">iSH</a> to run Rosemary. Install Rosemary on iSH by running the command below.</b>
+                    <pre class="windows" style="gap: 0;"><i class="fa-brands fa-windows" style="margin-right: 10px;"></i> <span class="win-code-prefix">C:\Windows\System32</span>><code style="margin: 0 10px;">cURL -cS https://github.com/TheRosemaryProject/Rosemary/blob/main/install.bat</code></pre>
                     <pre class="unix"><i class="fa-brands fa-apple"></i><i class="fa-brands fa-linux"></i> $<code>cURL -cS https://github.com/TheRosemaryProject/Rosemary/blob/main/install.sh</code></pre>
+
+                    <style>
+                        /* Progress bar */
+                        .progress-bar-container {
+                            display: flex;
+                            gap: 10px;
+                            color: lightgray;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .progress-bar {
+                            height: 10px;
+                            border-radius: 5px;
+                            width: 60%;
+                            background: lightgray;
+                            overflow: hidden;
+                        }
+                        .progress-complete {    
+                            background: rgb(70,139,0);
+                            background: linear-gradient(90deg, rgb(90, 179, 1) 0%, rgba(60,255,114,1) 90%);
+                            height: 10px;
+                            border-radius: 5px;
+                        }
+                    </style>
+                    <div class="progress-catalog">
+                        <div class="progress-item acrylic">
+                            <div class="progress-container">
+                                <div class="progress-box">
+                                    <h3>Documentation</h3>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar">
+                                            <div class="progress-complete progress-docs" style="width: 5%;"></div>
+                                        </div>
+                                        <span>5%</span>
+                                    </div>
+                                    <p>The documentation for Rosemary. Currently done:</p>
+                                    <ul>
+                                        <li><p>Quickstart and Introduction</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-item acrylic">
+                            <div class="progress-container">
+                                <div class="progress-box">
+                                    <h3>Website</h3>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar">
+                                            <div class="progress-complete progress-docs" style="width: 25%;"></div>
+                                        </div>
+                                        <span>25%</span>
+                                    </div>
+                                    <p>This beta website. Currently finished:</p>
+                                    <ul>
+                                        <li>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar">
+                                                    <div class="progress-complete progress-docs" style="width: 50%;"></div>
+                                                </div>
+                                                <span><i class="fa-solid fa-house"></i>: 50%</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-item acrylic">
+                            <div class="progress-container">
+                                <div class="progress-box">
+                                    <h3>Language</h3>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar">
+                                            <div class="progress-complete progress-docs" style="width: 25%;"></div>
+                                        </div>
+                                        <span>25%</span>
+                                    </div>
+                                    <p>The actual programming language.</p>
+                                    <em>See the <a href="https://github.com/TheRosemaryProject/Rosemary">Github</a> for more information</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row" style="margin-top: 25px; padding: 25px;">
                     <div class="container text-center flex-center flex-column" style="margin-bottom: 20px;">
@@ -422,7 +552,17 @@
                     </div>
                 </div>
                 <footer class="rsmy-footer">
-
+                    <div class="row footer-row" style="justify-content: space-between; width: 100%;">
+                        <h2><a href="#"><img src="logo_greyscale.png" style="height: 64px; filter: invert(83%) sepia(1%) saturate(7426%) hue-rotate(200deg) brightness(129%) contrast(51%);"></a></h2>
+                        <h2><a href="https://github.com/GoneRogueProductions"><img src="https://gonerogue.ml/safari-pinned-tab.svg" style="height: 64px; filter: invert(83%) sepia(1%) saturate(7426%) hue-rotate(200deg) brightness(129%) contrast(51%);"></a></h2>
+                    </div>
+                    <div class="row footer-row">
+                        <div class="col-sm">
+                            <p>Built by <a href="https://github.com/GoneRogueProductions">GoneRogue</a>.</p>
+                            <p>Everything listed is under the GPT-3 license.</p>
+                            <p>Newest version: <b>prerelease-0.1</b></p>
+                        </div>
+                    </div>
                 </footer>
             </div>
         </div>
@@ -468,13 +608,14 @@
                     $(".windows").css("display","none");
                 } else if (iosPlatforms.indexOf(platform) !== -1) {
                     os = 2; // iOS
-                    $(".mobile").css("display","initial");
+                    $(".ios").css("display","initial");
+                    $(".windows").css("display","none");
                 } else if (windowsPlatforms.indexOf(platform) !== -1) {
                     os = 3; // Windows
                     $(".unix").css("display","none");
                 } else if (/Android/.test(userAgent)) {
                     os = 4; // Android
-                    $(".mobile").css("display","initial");
+                    $(".android").css("display","initial");
                 } else if (/Linux/.test(platform)) {
                     os = 5; // UNIX/Linux
                 }
