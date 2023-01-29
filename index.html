@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>RSMY Web Beta</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -9,6 +9,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
+
+            
             *,
             *::after,
             *::before {
@@ -182,6 +184,13 @@
                 .main {
                     background-image: linear-gradient(135deg, rgb(13, 42, 60) 0%, rgb(73, 75, 125) 100%);
                 }
+
+                .icon-link {
+                    color: rgb(110,168,254);
+                }
+                .icon-link:hover {
+                    color: rgba(158,197,254);
+                }
               }
               @media (max-width: 579px) {
                 .main {
@@ -263,6 +272,70 @@
               .not-supported {
                 display: none;
               }
+
+              .flex-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+              .flex-column {
+                flex-direction: column;
+              }
+
+              .icon-container {
+                border-radius: 10px;
+                font-size:calc(1.375rem + 1.5vw)!important;
+                aspect-ratio: 1 / 1;
+                width: 4rem;
+                height: 4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+              }
+
+              .icon-link {
+                display: flex;
+                align-items: center;
+                -webkit-text-decoration-color: rgba(13,110,253,0.5);
+                text-decoration-color: rgba(13,110,253,0.5);
+                text-underline-offset: 0.5rem;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+                transition: 0.2s;
+                color: rgb(13,110,253);
+                text-decoration-color: rgba(13,110,253,0.5);
+                font-size: 20px;
+                padding-left: 0!important;
+                gap: 5px;
+              }
+              .icon-link:hover {
+                color: rgb(10,88,202);
+                gap: 10px;
+              }
+              .icon-link:hover > .icon-link-arrow {
+                color: rgb(57, 133, 247);
+              }
+              @media (min-width: 1000px) {
+                .border-right {
+                    border-right: 1px solid gray;
+                }
+              }
+              @media (max-width: 999px) {
+                .col-sm {
+                    width: 100%;
+                    flex: initial!important;
+                    padding: 12px;
+                }
+                .border-right {
+                    border-bottom: 1px solid gray;
+                }
+              }
+
+              .rsmy-footer {
+                background: white;
+              }
         </style>
     </head>
     <body>
@@ -296,24 +369,24 @@
                     <h1 class="rsmy-title" style="margin-bottom: 0;"><img src="logo.png" style="height: 64px;"></h1>
                 </div>
                 <a class="nav-button acrylic active">
-                    <i class="fa-solid fa-house"></i>Home
+                    <i class="fa-solid fa-house"></i><span class="text">Home</span>
                 </a>
                 <a class="nav-button acrylic docs-button">
-                    <i class="fa-solid fa-book"></i>Docs
+                    <i class="fa-solid fa-book"></i><span class="text">Docs</span>
                 </a>
                 <a class="nav-button acrylic" src="https://github.com/TheRosemaryProject">
-                    <i class="fa-brands fa-github"></i>Github
+                    <i class="fa-brands fa-github"></i><span class="text">Github</span>
                 </a>
                 <a class="nav-button acrylic">
-                    <i class="fa-solid fa-house"></i>Docs
+                    <i class="fa-solid fa-house"></i><span class="text">Docs</span>
                 </a>
                 <a class="nav-button acrylic">
-                    <i class="fa-solid fa-house"></i>Docs
+                    <i class="fa-solid fa-house"></i><span class="text">Docs</span>
                 </a>
             </div>
 
             <a class="nav-button active text-center download-button">
-                <i class="fa-duotone fa-arrow-down-to-line"></i>Download Now!
+                <i class="fa-duotone fa-arrow-down-to-line"></i><span class="text">Download Now!</span>
             </a>
         </div>
         <div class="main">
@@ -327,13 +400,25 @@
                     <pre class="unix"><i class="fa-brands fa-apple"></i><i class="fa-brands fa-linux"></i> $<code>cURL -cS https://github.com/TheRosemaryProject/Rosemary/blob/main/install.sh</code></pre>
                 </div>
                 <div class="row" style="margin-top: 25px; padding: 25px;">
-                    <div class="col-sm" style="border-right: 1px solid gray;">
-                        Rosemary is GoneRogue's programming language.
+                    <div class="container text-center flex-center flex-column" style="margin-bottom: 20px;">
+                        <div class="icon-container" style="background: rgba(0, 0, 255, 0.221); color: rgb(255, 255, 255);">
+                            <i class="fa-duotone fa-folder-arrow-down"></i>   
+                        </div>
+                        <h2>Installation</h2>
+                        <p>Rosemary is easy to install. Just follow the steps below.</p>
+                        <a href="#" class="icon-link fw-semibold justify-content-center ps-md-4">Installation in the Docs    <i class="fa-solid fa-arrow-right icon-link-arrow"></i></a>
+                    </div>
+                    <div class="col-sm border-right">
+                        <h3>Install using the command-line</h3>
+                        <p>It's easy to install Rosemary.</p>
                     </div>
                     <div class="col-sm">
-                        Lorem ipsum...
+                        <h3>Install using an installer</h3>
                     </div>
                 </div>
+                <footer class="rsmy-footer">
+                    
+                </footer>
             </div>
         </div>
         <script>
@@ -341,13 +426,9 @@
             function hideMenu() {
                 if (hideMenuVar === false) {
                     $(".sidenav").css("width","100px");
-                    $(".nav-button").css("padding-left","1.75vh");
-                    $(".nav-button").css("padding-right","1.75vh");
-                    $(".download-button").css("padding-left","2vh");
-                    $(".docs-button").css("padding-left","1.95vh");
                     $(".nav-button").css("white-space","nowrap");
-                    $(".nav-button").css("justify-content","left");
-                    $(".nav-button").css("gap","100vh");
+                    $(".nav-button").css("justify-content","center");
+                    $(".text").css("display","none");
                     $(".rsmy-title").css("display","none");
                     $(".main").css("padding-left","125px");
                     setTimeout(function() {
@@ -358,20 +439,21 @@
                 }
                 else if (hideMenuVar === true) {
                     $(".nav-button").css("padding-left","25px");
-                    $(".nav-button").css("gap","10px");
+                    $(".text").css("display","initial");
                     $(".sidenav").css("width","300px");
                     $(".rsmy-favicon").css("display","none");
                     $(".rsmy-title").css("display","initial");
                     $(".main").css("padding-left","325px");
+                    $(".nav-button").css("justify-content","left");
                     $(".menu-button").css("width","auto");
+                    $(".download-button").css("justify-content","center");
                     hideMenuVar = false;
                 }
             }
-
             function getOS() {
                 var userAgent = window.navigator.userAgent,
                     platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
-                    macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                    macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K', 'macOS'],
                     windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
                     iosPlatforms = ['iPhone', 'iPad', 'iPod'],
                     os = null;
@@ -394,8 +476,7 @@
                 else {
                     $(".not-supported").css("display","initial");
                 }
-
-            }
+                }
 
             const copyButtonLabel = "<i class='fa-light fa-copy'></i>";
 
