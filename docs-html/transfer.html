@@ -1,0 +1,236 @@
+  <h2 id="nix-install">*nix Install</h2>
+<h4 id="simple">Simple</h4>
+<ul>
+<li>Run this command:</li>
+</ul>
+<pre class=" language-bash"><code class="prism  language-bash">curl https://github.com/TheRosemaryProject/Rosemary/blob/main/install.sh <span class="token operator">&gt;</span> install.sh
+</code></pre>
+<ul>
+<li>And then</li>
+</ul>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">chmod</span> +x install.sh
+</code></pre>
+<ul>
+<li>Then finally</li>
+</ul>
+<pre class=" language-bash"><code class="prism  language-bash">./install
+</code></pre>
+<ul>
+<li>And Rosemary and Sprig are now installed!</li>
+</ul>
+<h2 id="windows-install">Windows Install</h2>
+<h4 id="simple-1">Simple</h4>
+<ul>
+<li>Run this command:</li>
+</ul>
+<pre class=" language-bat"><code class="prism  language-bat">curl https://github.com/TheRosemaryProject/Rosemary/blob/main/install.bat &gt; install.bat
+</code></pre>
+<ul>
+<li>And then</li>
+</ul>
+<pre class=" language-bat"><code class="prism  language-bat">./install
+</code></pre>
+<ul>
+<li>And Rosemary and Sprig are now installed!</li>
+</ul>
+<h2 id="hello-world">Hello World</h2>
+<p><span id="print"></span></p>
+<h4 id="print-to-std">Print to STD</h4>
+<pre class=" language-rsmy"><code class="prism  language-rsmy">print hello, world
+</code></pre>
+<ul>
+<li>You don’t <em>need</em> quotes, but you can use them and they will be stripped from the string<br>
+<span id="var"></span></li>
+</ul>
+<h4 id="variables">Variables</h4>
+<ul>
+<li>In Rosemary, you use a statically typed system</li>
+<li>We borrowed and simplified some C++ types</li>
+<li>To create a variable, use</li>
+</ul>
+<pre class=" language-rsmy"><code class="prism  language-rsmy">int x = 3;
+</code></pre>
+<ul>
+<li>Note the spaces, these are important.</li>
+<li>Now to view a variable and print to STD</li>
+</ul>
+<pre class=" language-rsmy"><code class="prism  language-rsmy">$x
+</code></pre>
+<ul>
+<li>Which will return</li>
+</ul>
+<pre class=" language-rcon"><code class="prism  language-rcon">&gt;&gt;&gt; $x
+3
+&gt;&gt;&gt;
+</code></pre>
+<p><span id="types"></span></p>
+<h4 id="types">Types</h4>
+<ul>
+<li>List of types:</li>
+<li>int</li>
+<li>string</li>
+<li>float</li>
+<li>bool</li>
+</ul>
+<h2 id="ides">IDEs</h2>
+<h4 id="vs-code">VS Code</h4>
+<ul>
+<li>Search for ‘Rosemary’ in the extensions tab (NOT DONE YET)</li>
+<li>Open up a new file ending in .rsmy</li>
+<li>Write your code</li>
+<li>Then in the shell window run</li>
+</ul>
+<h6 id="bash">BASH</h6>
+<pre class=" language-bash"><code class="prism  language-bash">rsmy filename.rsmy
+</code></pre>
+<h6 id="powershell">POWERSHELL</h6>
+<pre><code>rsmy filename.rsmy
+</code></pre>
+<h4 id="notepad-and-system-editors">Notepad and system editors</h4>
+<ul>
+<li>Write your code</li>
+<li>Then run the scripts above in a terminal window</li>
+</ul>
+<hr>
+<h3 id="in-a-terminal-window">In a terminal window</h3>
+<ul>
+<li>Run rsmy with no arguments</li>
+</ul>
+<h6 id="bash-1">BASH</h6>
+<pre class=" language-bash"><code class="prism  language-bash">rsmy
+</code></pre>
+<h6 id="powershell-1">POWERSHELL</h6>
+<pre><code>rsmy
+</code></pre>
+<ul>
+<li>This will launch a shell, like so</li>
+</ul>
+<h6 id="bash-2">BASH</h6>
+<pre class=" language-bash"><code class="prism  language-bash">rsmy
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span>
+</code></pre>
+<h6 id="powershell-2">POWERSHELL</h6>
+<pre><code>rsmy
+&gt;&gt;&gt;
+</code></pre>
+<ul>
+<li>You can then enter your commands at the <code>&gt;&gt;&gt;</code> prompt</li>
+</ul>
+<h2 id="logs-and-errors">Logs and errors</h2>
+<p><img id="logs"></p>
+<h3 id="logs">Logs</h3>
+<ul>
+<li>Whenever you run a file, Rosemary will log your command in <code>rsmy.log</code></li>
+<li>You can use this for error checking and advanced debugging</li>
+<li>It will be logged in the following format:</li>
+</ul>
+<pre class=" language-rcon"><code class="prism  language-rcon">Call was &lt;call&gt; Success: &lt;1 or 0&gt; Debug info: &lt;debuginfo&gt; Any messages: &lt;messages&gt;
+</code></pre>
+<ul>
+<li>Each entry will have a newline<br>
+<img id="errors"></li>
+</ul>
+<h3 id="errors">Errors</h3>
+<ul>
+<li>When you run a Rosemary file, there may be some errors.</li>
+<li>These will be logged to rsmy.log</li>
+<li>Common errors include:<br>
+<code>TypeError</code> Incorrect type supplied<br>
+<code>SyntaxError</code> Syntax is wrong<br>
+<code>CompileError</code> Your compiler isn’t working<br>
+<code>RunTimeError</code> An error occurred on the fly<br>
+<code>KeyboardInterrupt</code> You pressed Ctrl+Shift+Esc to end the process<br>
+<img id="debug"></li>
+</ul>
+<h3 id="debugging-guide">Debugging guide</h3>
+<p><code>TypeError</code> You have supplied the wrong type, for example int to a string. Try changing your code, but dodgy input may be at fault.</p>
+<p><code>SyntaxError</code> You are missing something - check your brackets!</p>
+<p><code>CompileError</code> The compiler threw an error - try upgrading to the latest version.</p>
+<p><code>RunTimeError</code> Something caused by user error caused this. You may have provided bad input, or the wrong key combination.</p>
+<p><code>KeyboardInterrupt</code> Hardly an error. If this occurs without you pressing Ctrl+Shift+Esc, report a bug.</p>
+<h2 id="sprig">Sprig</h2>
+<ul>
+<li>Sprig is Rosemary’s in-house package manager. It comes bundled with Rosemary, so you don’t have to install it</li>
+<li>To use it, you need curl installed! It comes bundled with most systems, try to run <code>curl</code> to check if it is installed<br>
+<img id="pick"></li>
+</ul>
+<h3 id="downloading-packages">Downloading packages</h3>
+<ul>
+<li>Pick a package to install. There is a description of each at &lt;TBC&gt;.&lt;TBC&gt;/sprigs/&lt;name&gt;</li>
+<li>Then run sprig</li>
+</ul>
+<h6 id="bash-3">BASH</h6>
+<pre class=" language-bash"><code class="prism  language-bash">sprig pick <span class="token operator">&lt;</span>NAME OF PACKAGE<span class="token operator">&gt;</span>
+</code></pre>
+<h6 id="powershell-3">POWERSHELL</h6>
+<pre class=" language-cmd"><code class="prism  language-cmd">sprig pick &lt;NAME OF PACKAGE&gt;
+</code></pre>
+<ul>
+<li>This will grab 2 files from the server: a .rsmy file, and a JSON manifest file</li>
+<li>To find out more about the package you just found, try running</li>
+</ul>
+<h6 id="bash-4">BASH</h6>
+<pre class=" language-bash"><code class="prism  language-bash">sprig info <span class="token operator">&lt;</span>NAME OF PACKAGE<span class="token operator">&gt;</span>
+</code></pre>
+<h6 id="powershell-4">POWERSHELL</h6>
+<pre class=" language-cmd"><code class="prism  language-cmd">sprig info &lt;NAME OF PACKAGE&gt;
+</code></pre>
+<ul>
+<li>You now have your first sprig installed!<br>
+<img id="delete"></li>
+</ul>
+<h3 id="deleting-packages">Deleting packages</h3>
+<ul>
+<li>Run this command to remove your chosen package:</li>
+</ul>
+<h6 id="bash-5">BASH</h6>
+<pre class=" language-bash"><code class="prism  language-bash">sprig <span class="token function">cut</span> <span class="token operator">&lt;</span>NAME OF PACKAGE<span class="token operator">&gt;</span>
+</code></pre>
+<h6 id="powershell-5">POWERSHELL</h6>
+<pre class=" language-cmd"><code class="prism  language-cmd">sprig cut &lt;NAME OF PACKAGE&gt;
+</code></pre>
+<ul>
+<li>The package should now be deleted.</li>
+</ul>
+<h3 id="your-packages">Your packages</h3>
+<p><img id="create"></p>
+<h4 id="creating">Creating</h4>
+<ul>
+<li>You can fairly easily create your own package, with this command:</li>
+<li><code>sprig build &lt;NAME&gt; &lt;path/to/main.rsmy&gt; &lt;path/to/manifest.json&gt; &lt;path/to/passwd&gt;</code></li>
+<li>The Rosemary file is what you want your package to do, including any functions or classes you want</li>
+<li>The JSON file should be in this form:</li>
+</ul>
+<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+    <span class="token string">"auths"</span><span class="token punctuation">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">"name"</span><span class="token punctuation">:</span><span class="token string">"werdl"</span><span class="token punctuation">,</span><span class="token string">"org"</span><span class="token punctuation">:</span><span class="token string">"gonerogue"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">"name"</span><span class="token punctuation">:</span><span class="token string">"bot"</span><span class="token punctuation">,</span><span class="token string">"org"</span><span class="token punctuation">:</span><span class="token keyword">null</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span><span class="token string">"example"</span><span class="token punctuation">,</span>
+    <span class="token string">"desc"</span><span class="token punctuation">:</span><span class="token string">"sprig example package"</span><span class="token punctuation">,</span>
+    <span class="token string">"version"</span><span class="token punctuation">:</span><span class="token string">"v0.0"</span><span class="token punctuation">,</span>
+    <span class="token string">"dependancy"</span><span class="token punctuation">:</span><span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Put your info in where needed</li>
+<li>The passwd file is a one-line file containing the password to edit this Sprig</li>
+<li>If a Sprig of this name already exists, ensure you have a unique name<br>
+<img id="grow"></li>
+</ul>
+<h4 id="updating-and-contributing">Updating and contributing</h4>
+<ul>
+<li>If you want to push the latest version of your code, you will need to run this command</li>
+</ul>
+<h6 id="bash-6">BASH</h6>
+<pre class=" language-bash"><code class="prism  language-bash">sprig grow <span class="token operator">&lt;</span>NAME<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>path/to/manifest.json<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>path/to/main.rsmy<span class="token operator">&gt;</span> <span class="token function">passwd</span>
+</code></pre>
+<h6 id="powershell-6">POWERSHELL</h6>
+<pre class=" language-cmd"><code class="prism  language-cmd">sprig grow &lt;NAME&gt; &lt;path/to/manifest.json&gt; &lt;path/to/main.rsmy&gt; passwd
+</code></pre>
+<ul>
+<li>The manifest and .rsmy file is the same as above, however you also need to provide a passwd field</li>
+<li>This needs to match what is in the passwd file uploaded earlier, or the command will fail to build</li>
+<li>You can give this to anyone who needs to work on the file</li>
+<li>By this process, you and others can contribute to the same projects</li>
+</ul>
