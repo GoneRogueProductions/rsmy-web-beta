@@ -1,1 +1,87 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <title>RSMY Web Beta</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://kit.fontawesome.com/049529442a.js" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="topnav acrylic">
+            <h2>Rosemary</h2>
+            <div class="topnav-tray">
+                <a class="nav-button acrylic active topnav-button" href="/">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+                <a class="nav-button acrylic topnav-button" href="/docs-html/index.html">
+                    <i class="fa-solid fa-book"></i>
+                </a>
+                <a class="nav-button acrylic topnav-button">
+                    <i class="fa-solid fa-book"></i>
+                </a>
+                <a class="nav-button acrylic topnav-button">
+                    <i class="fa-solid fa-book"></i>
+                </a>
+                <a class="nav-button acrylic topnav-button">
+                    <i class="fa-solid fa-book"></i>
+                </a>
+            </div>
+        </div>
+        <div class="sidenav acrylic">
+            <div class="sidenav-cont">
+                <img class="rsmy-favicon" src="favicon.png">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="nav-button acrylic menu-button" onclick="hideMenu();">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <h1 class="rsmy-title" style="margin-bottom: 0;"><img src="logo.png" style="height: 64px;"></h1>
+                </div>
+                <a class="nav-button acrylic active" href="/">
+                    <i class="fa-solid fa-house"></i><span class="text">Home</span>
+                </a>
+                <a class="nav-button acrylic docs-button" href="/docs-html/index.html">
+                    <i class="fa-solid fa-book"></i><span class="text">Docs</span>
+                </a>
+                <a class="nav-button acrylic" src="https://github.com/TheRosemaryProject">
+                    <i class="fa-brands fa-github"></i><span class="text">Github</span>
+                </a>
+                <a class="nav-button acrylic">
+                    <i class="fa-solid fa-house"></i><span class="text">Docs</span>
+                </a>
+                <a class="nav-button acrylic">
+                    <i class="fa-solid fa-house"></i><span class="text">Docs</span>
+                </a>
+            </div>
+
+            <a class="nav-button active text-center download-button">
+                <i class="fa-duotone fa-arrow-down-to-line"></i><span class="text">Download Now!</span>
+            </a>
+        </div>
+
+        <div class="main">
+            <div class="container" style="height: 100%; width: 100%; ">
+                <h1 class="text-center mb-3 fw-semibold" style="font-size: calc(1.525rem + 3.3vw); line-height: 1.3;">Make anything in your imagination, using Rosemary</h1>
+
+                <footer class="rsmy-footer">
+                    <div class="row footer-row" style="justify-content: space-between; width: 100%;">
+                        <h2><a href="#"><img src="logo_greyscale.png" style="height: 64px; filter: invert(83%) sepia(1%) saturate(7426%) hue-rotate(200deg) brightness(129%) contrast(51%);"></a></h2>
+                        <h2><a href="https://github.com/GoneRogueProductions"><img src="https://gonerogue.ml/safari-pinned-tab.svg" style="height: 64px; filter: invert(83%) sepia(1%) saturate(7426%) hue-rotate(200deg) brightness(129%) contrast(51%);"></a></h2>
+                    </div>
+                    <div class="row footer-row">
+                        <div class="col-sm">
+                            <p>Built by <a href="https://github.com/GoneRogueProductions">GoneRogue</a>.</p>
+                            <p>Everything listed is under the GPT-3 license.</p>
+                            <p>Newest version: <b>prerelease-0.1</b></p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
