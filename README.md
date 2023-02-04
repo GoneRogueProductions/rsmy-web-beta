@@ -1,3 +1,6 @@
-# rsmy-web-beta
+# therosemaryproject.github.io
 
-a new website for rosmary!!!!!
+### The newest site for Rosemary.
+
+Current Progress: (check here for latest resuts, online is updated after)
+Docs: [==            ] 10%
